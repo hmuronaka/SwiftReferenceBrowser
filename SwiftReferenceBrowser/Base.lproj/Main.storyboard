@@ -721,7 +721,7 @@
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn identifier="SwiftTypeCell" width="116" minWidth="40" maxWidth="1000" id="mTL-w1-4Dd">
+                                                <tableColumn identifier="MyView" width="116" minWidth="40" maxWidth="1000" id="mTL-w1-4Dd">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -734,7 +734,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="Frt-ow-yFc">
+                                                        <tableCellView identifier="MyView" id="Frt-ow-yFc">
                                                             <rect key="frame" x="1" y="1" width="116" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -757,6 +757,7 @@
                                             </tableColumns>
                                             <connections>
                                                 <outlet property="dataSource" destination="XfG-lQ-9wD" id="5IQ-CV-fXi"/>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="8fC-Uh-4du"/>
                                             </connections>
                                         </tableView>
                                     </subviews>

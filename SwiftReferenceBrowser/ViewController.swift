@@ -24,7 +24,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         searchField.delegate = self
         
-        let basePath = "/Users/hmu/src/private/scripts/apexdoc/backend/swift"
+        let basePath = "swiftdoc/backend/swift"
         collection = SwiftTypeCollection(contentsOfPath: basePath)
     }
 
@@ -51,10 +51,13 @@ extension ViewController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return selectedTypes.count
     }
-    
-    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        return selectedTypes[row].titleContent
-    }
-    
-    
+}
+
+extension ViewController: NSTableViewDelegate {
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        let cell = tableView.make(withIdentifier: "MyView", owner: self) as! NSTableCellView
+        cell.textField?.stringValue = selectedTypes[row].titleContent
+        print("\(selectedTypes[row].titleContent)")
+        return cell
+     }
 }
